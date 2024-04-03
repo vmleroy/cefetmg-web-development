@@ -1,0 +1,65 @@
+/* IMAGENS */
+img, iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+img:not(#logo) {
+  border-radius: 20px;
+}
+
+#logo {
+  width: 200px;
+}
+
+/* CABEÇALHOS */
+h1, h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+/* LINKS */
+a {
+  background-image: url("img/globo.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 20px;
+}
+
+a:link {
+  color: blue;
+  text-decoration: none;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+a:active {
+  color: green;
+}
+
+/* NOTAS */
+.notas {
+  opacity: 0.25;
+}
+
+.notas:hover {
+  opacity: 1;
+}
+
+/* CABEÇALHO DE LISTA */
+strong.indice {
+  display: inline-block;
+  color: purple;
+  background-color: plum;
+  font-size: 28px;
+  padding: 10px;
+}
+.indice-header {
+  font-size: 18px;
+}
