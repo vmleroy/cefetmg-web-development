@@ -178,7 +178,7 @@ main {
   margin-bottom: 1em;
 }
 
-#tags :active {
+#tags :active:not(h1) {
   position: relative;
   bottom: 2px;
   right: 2px;
