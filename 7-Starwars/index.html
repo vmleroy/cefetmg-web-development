@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Star Wars Intros</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="imgs/favicon.png">
+  </head>
+  <body>
+    <nav id="filmes">
+      <ul>
+        <!-- vamos usar esse atributo "data-id-episodio" pra saber para
+             a qual filme cada <li> se refere para saber qual intro carregar
+             quando o <li> for clicado -->
+        <!-- <li data-id-episodio="1">Episode I</li>
+        <li data-id-episodio="2">Episode II</li>
+        <li data-id-episodio="X">Episode ...</li> -->
+      </ul>
+    </nav>
+
+    <main>
+      <div class="container">
+        <pre id="intro" class="animacao-subindo"></pre>
+      </div>
+    </main>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/starwars.js" charset="utf-8"></script>
+    <script src="js/reinicia-animacao.js" charset="utf-8"></script>
+
+  </body>
+</html>
