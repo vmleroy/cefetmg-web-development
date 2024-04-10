@@ -1,0 +1,149 @@
+/* Importa o arquivo CSS que importa a fonte Ravie */
+/* Um arquivo CSS pode importar outro usando @import */
+@import "fonts/ravie.css";
+
+body, html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Verdana", "OpenSans", sans-serif;
+}
+
+strong {
+  color: #d027aa;
+}
+
+#recipiente {
+  background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+}
+
+#cardapio {
+  padding: 0 20px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid #aac0ae;
+  border-bottom: 1px solid #aac0ae;
+  border-left: 1px solid #aac0ae;
+}
+
+#cardapio h3 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 30px;
+}
+
+#cardapio article {
+  font-size: 14px;
+  color: #333;
+}
+
+
+/* EXERCÍCIO 1: layout da página */
+#recipiente {
+  width: 800px;
+  min-height: 100%;
+  margin: 0 auto;
+  /* layout da página aqui */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 154px 1fr;
+}
+
+#cabecalho-pagina {
+  grid-row: 1/1;
+  grid-column: 2/2;
+}
+
+#lateral {
+  grid-row: 1/-1;
+  grid-column: 1/1;
+}
+
+#cardapio {
+  grid-row: 2/2;
+  grid-column: 2/2;
+}
+
+#rodape-pagina {
+  grid-row: 3/3;
+  grid-column: 2/2;
+}
+
+
+
+
+/* EXERCÍCIO 2: cabeçalho da página */
+#cabecalho-pagina {
+  padding: 10px;  
+  display: flex;
+  flex-direction: column;
+}
+
+#cabecalho-pagina h1 {
+  margin: 0;
+  font-family: "Ravie", cursive;
+  font-size: 36px;
+  color: #e90c0c;
+  font-weight: normal;
+  align-self: center;
+}
+
+#cabecalho-pagina h2 {
+  font-size: 24px;
+  color: #333;
+  font-weight: normal;
+  margin: 0;
+  align-self: flex-end;
+}
+
+
+/* EXERCÍCIO 3: cada item do menu */
+article {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+
+/* EXERCÍCIO 4: o rodapé */
+#rodape-pagina {
+  display: flex;
+  justify-content: flex-end;
+  margin: 46px 15px 25px 0
+}
+
+/* EXERCÍCIO 5: lateral */
+#lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* DESAFIO 1: o ticket */
+#ticket {
+  position: fixed;
+  left: -89px;
+  top: 50%;
+  transition: left 100ms ease-out;
+}
+
+#ticket:hover {
+  left: 0;
+}
+
+
+/* DESAFIO 2: deslocamento no siri e peixe */
+#siri {
+  position: relative;
+  top: 17px;
+  right: 10px;
+}
+
+#peixe {
+  position: relative;
+  right: 44px;
+}
