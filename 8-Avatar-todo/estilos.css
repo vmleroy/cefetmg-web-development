@@ -1,0 +1,63 @@
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: 'Encode Sans', sans-serif;
+  background-image: linear-gradient(to right, lightblue, #ffdbff);
+}
+
+header {
+  padding: 0.1em 0.5em;
+  position: relative;
+  transition: all 120ms ease-out 0ms;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.04);
+  border: 1px dashed rgba(0, 0, 0, 0.16);
+  background-image: url(imgs/fundo-cabecalho.png);
+}
+
+header:hover {
+  box-shadow: 4px 0 8px #0004;
+  background-color: rgba(255, 255, 255, 0.20);
+  top: -4px;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0.25em 0;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 1em;
+}
+
+main > section {
+  border: 1px dashed rgba(0, 0, 0, 0.16);
+  padding: 1em;
+  background-color: #fff5;
+}
+
+main > section:not(:first-child) {
+  flex: 1 1 30%;
+}
+
+main > section > h2:first-child {
+  margin-top: 0;
+}
+
+#avatar-preview::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -15px;
+  height: 15px;
+  right: 10px;
+  width: 26px;
+  background-image: url(imgs/marcacao-de-tesoura.png);
+}
