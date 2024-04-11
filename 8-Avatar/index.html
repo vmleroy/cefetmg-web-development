@@ -40,11 +40,31 @@
           <img src="imgs/acessorio-bandana.png" alt="Bandana" id="avatar-bandana" class="avatar-acessorio">
         </div>
         <p id="avatar-nome">Meu nome...</p>
+        <button id="baixar">
+          <img src="imgs/icone-tesoura.png" alt="Baixar">
+          Baixar avatar
+        </button>
       </section>
       <section id="secao-controles">
         <h2>Controles</h2>
-        <div>
+        <div class="controles">
           <!-- coloque os controles aqui -->
+          <div class="input-with-label">
+            <label class="label"> Nome: </label>
+            <input type="text" id="avatar-nome-input" class="input-text" placeholder="Nome">
+          </div>
+          <div class="input-with-label">
+            <label class="label"> Cor da pele: </label>
+            <input type="color" id="avatar-cor-pele-input" class="input-color">
+          </div>
+          <div class="input-with-label">
+            <label class="label"> Cor do cabelo: </label>
+            <select id="avatar-cor-cabelo-select" class="select-hair"></select>
+          </div>
+          <div class="input-checkbox-with-label">
+            <label class="label"> Acessórios: </label>
+          </div>
+
         </div>
       </section>
       <section id="secao-instrucoes">
@@ -61,6 +81,8 @@
             Pixel Art Avatar Icon Generator</a>.</p>
       </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="html2canvas.js" charset="utf-8"></script>
     <script src="avatar.js" charset="utf-8"></script>
   </body>
 </html>
