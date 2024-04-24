@@ -10,10 +10,7 @@ from .models import *
 
 class ListaTesourosView(View):
     def tesouros(self):
-        return Tesouro.objects.all()\
-            .annotate(
-                valor_total=models.F('preco') * models.F('quantidade'),
-            )
+        return Tesouro.objects.annotate(valor_total=models.F('preco') * models.F('quantidade'))
                               
     def get(self, request):
         tesouros = self.tesouros()
