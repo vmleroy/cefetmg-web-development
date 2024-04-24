@@ -1,0 +1,15 @@
+{% load static %}
+
+<h1>
+  <img src="{% static "images/alien-icon.png" %}" id="logo"
+    alt="Ícone com o rosto de um alien">
+  Exploração Espacial
+</h1>
+<nav id="menu-principal">
+  <ul>
+    <li><a href="{% url 'home' %}">Sobre Aliens</a></li>
+    <li><a href="{% url 'philiae' %}">Sobre a Philae</a></li>
+  </ul>
+</nav>
+
+<script src="{% static "js/navigation.js" %}"></script>

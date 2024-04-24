@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %} Home {% endblock %}
+
+{% block content %}
+<article id="aliens">
+  <h1>Sobre Aliens</h1>
+  <h2>De onde eles vêm</h2>
+  <p>
+    <button class="botao-expandir-retrair">+</button>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in
+    dignissim augue. Nunc a erat ac nisl imperdiet dapibus sit amet
+    in ipsum. Suspendisse scelerisque in dui in placerat. Praesent
+    ornare est dolor, at pharetra mauris finibus in. Aenean vulputate,
+    massa ut molestie tincidunt, eros mi pulvinar sem, lobortis
+    efficitur dolor turpis eget velit. Donec non metus ante. Nam
+    quis quam quis magna laoreet ultricies. Duis non ex maximus,
+    congue augue nec, lobortis magna. Sed et tristique ex, non iaculis
+    libero. In tincidunt dolor at metus lacinia semper eu quis
+    enim. Class aptent taciti sociosqu ad litora torquent per conubia
+    nostra, per inceptos himenaeos.
+  </p>
+  <h2>O que eles querem</h2>
+  <p>
+    <button class="botao-expandir-retrair">+</button>
+    Cras velit mauris, suscipit ac blandit sit amet, scelerisque eget
+    sem. Aenean purus leo, tincidunt consectetur libero id, euismod
+    ultrices diam. Nam erat purus, faucibus ut nisl in, facilisis
+    venenatis mauris. Praesent maximus vulputate euismod. Fusce
+    eget lacinia nisi. Aenean eu ornare leo. Maecenas risus justo,
+    ornare ac orci quis, ultrices tincidunt tortor. Nunc sodales
+    magna non lorem bibendum sollicitudin. In porta, velit cursus
+    consectetur finibus, diam magna porta lorem, posuere ullamcorper
+    eros nulla auctor nibh. Ut fermentum diam magna, eu luctus libero
+    mattis vitae. Sed laoreet lorem vel orci dictum, eu sodales nisi
+    scelerisque. Maecenas vestibulum dapibus fermentum. Donec auctor
+    mauris nulla, eget sagittis sem molestie nec.
+  </p>
+  <h2>Para onde eles vão</h2>
+  <p>
+    <button class="botao-expandir-retrair">+</button>
+    Vestibulum auctor orci lacus, sit amet pretium mauris viverra
+    nec. Nullam eu maximus augue. Phasellus in metus sit amet sem dapibus
+    iaculis ut at odio. Cras turpis dui, lacinia non posuere quis,
+    posuere id mi. Etiam nisi erat, aliquet at libero at, porta pretium
+    ligula. Duis faucibus massa id metus venenatis posuere ac vitae
+    nulla. Praesent quis dui non metus hendrerit pretium. Nunc sit amet
+    purus dapibus, consequat augue a, pulvinar mi. Morbi fermentum
+    egestas dignissim. Suspendisse vulputate nibh sem, a aliquet
+    lorem porta ac.
+  </p>
+</article>
+
+<script src="{% static "js/home.js" %}"></script>
+{% endblock%}

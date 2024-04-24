@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %} Philae {% endblock %}
+
+{% block content %}
+
+<article id="philae">
+  <!-- Atividade 2: fazer o código JavaScript da galeria -->
+  <h1>Sobre a Philae</h1>
+  <p>
+    Philae é uma sonda robótica pousadora da Agência Espacial Europeia
+    que integra a sonda espacial Rosetta, construída para fazer o
+    primeiro pouso controlado no núcleo de um cometa do Sistema Solar,
+    o 67P/Churyumov-Gerasimenko.
+  </p>
+  <div id="galeria">
+    <img id="slide" src="http://fegemo.github.io/cefet-web/images/philae-parts.jpg">
+    <button id="anterior" class="controle">Anterior</button>
+    <button id="proximo" class="controle">Próximo</button>
+  </div>
+</article>
+
+<script src="{% static "js/philiae.js" %}"></script>
+{% endblock%}

@@ -1,0 +1,19 @@
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exploração Espacial</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Space+Mono">
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+  </head>
+  <body>
+    <header>
+      {% include 'navigation/navigation.html' %}
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>
