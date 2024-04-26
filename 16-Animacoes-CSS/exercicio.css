@@ -1,0 +1,128 @@
+#controles ul {
+  list-style-type: none;
+  padding: 0;
+  transform: translateX(-80%);
+}
+
+#controles ul:hover {
+  transform: translateX(0);
+}
+
+/* Exercício 1: Criar uma transição para quando o mouse estiver em cima dos
+ * botões play/stop (para que o elemento se revele lentamente)
+ */
+ #controles ul {
+    transition: ease transform 1s;
+ }
+
+/*
+ * Exercício 2: Você deve implementar uma metáfora visual para cada um dos 4
+ * estados dos animais. Algumas *sugestões*:
+ *   - com-fome: animal piscando (opacidade variando)
+ *   - satisfeito: uma borda verde no animal e o animal fica girando de alegria
+ *   - com-raiva: animal fica pulsando
+ *   - atacando: animal dá um salto e cresce, com uma borda vermelha
+ */
+.com-fome {
+  animation: piscando 2s infinite;
+}
+
+.satisfeito {
+  border: 2px solid green;
+  perspective: 400px;
+  animation: girando-3d 1s ease-in-out 0s infinite alternate,
+             girando 1s ease-in-out 1s infinite alternate;
+}
+
+.com-raiva {
+  border: 2px solid red;
+  animation: mover-direita-esquerda 1s ease-in-out 0s infinite,
+             pulsando 2s ease-in-out 1s infinite; 
+}
+
+.atacando {
+  border: 2px solid red;
+  animation: atacando 1s ease-in-out 0s infinite alternate;
+}
+
+
+@keyframes piscando {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}  
+
+@keyframes girando {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulsando {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes atacando {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  25% {
+    transform: scale(1.1) translateY(-80px);
+  }
+  50% {
+    transform: scale(1) translateY(0);
+  }
+  75% {
+    transform: scale(1.1) translateY(-80px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes mover-direita-esquerda {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-20px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  75% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }  
+}
+
+@keyframes girando-3d {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}

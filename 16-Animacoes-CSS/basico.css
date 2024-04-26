@@ -1,0 +1,193 @@
+/*
+ * Você não deve editar este arquivo. Use exercicio.css
+ */
+
+/* -----------------------------------------
+ * Elementos gerais
+ */
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -----------------------------------------
+ * Cabeçalho
+ */
+
+#cabecalho {
+  position: relative;
+  padding: 10px 10px 42px;
+  background-color: #000;
+  background-image: url(imgs/absurdity.png), linear-gradient(to right, #6F92CC, #A6C0EC);
+  border-bottom: 1px solid #6F92CC;
+  box-shadow: 0 2px 2px silver;
+  color: #fff;
+}
+
+#cabecalho h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: 'Righteous', cursive;
+}
+
+#cabecalho h2 {
+  margin: 0;
+  font-family: 'Exo 2', sans-serif;
+}
+
+#pontuacao {
+  position: absolute;
+  width: 2em;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  background-color: #fff;
+  color: darksalmon;
+  font-size: 2em;
+  padding: 0 .4em;
+  border-radius: 17px 17px 0 0;
+  box-shadow: inset 0 2px 2px 0 silver;
+}
+
+#pontuacao.negativa {
+  color: crimson;
+}
+
+#pontuacao.positiva {
+  color: limegreen;
+}
+
+/* -----------------------------------------
+ * Menu do jogo
+ */
+
+#controles {
+  position: fixed;
+  top: 50%;
+  margin-top: -30px;
+  height: 60px;
+  z-index: 100;
+}
+
+.item {
+  height: 38px;
+  font-family: 'Righteous', cursive;
+  font-size: 24px;
+  border: 2px solid #000;
+  border-bottom-style: none;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item > .texto {
+  margin: 3px 0;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.item:first-of-type {
+  border-top-right-radius: 6px;
+}
+
+.item:last-of-type {
+  border-bottom: 2px solid #000;
+  border-bottom-right-radius: 6px;
+}
+
+.item>.icone {
+  height: 100%;
+  background-color: #555;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.comecar, .parar {
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.comecar {
+  background-image: url('imgs/icone-comecar.png');
+}
+
+.parar {
+  background-image: url('imgs/icone-parar.png');
+}
+
+/* -----------------------------------------
+ * Região do conteúdo
+ */
+
+#comando {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -90px;
+  margin-top: -15px;
+  width: 180px;
+  height: 30px;
+  border: 3px solid goldenrod;
+  border-radius: 10px;
+  padding: 5px 8px;
+  background-color: rgba(255, 255, 255, .8);
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 1;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+#comando.visivel {
+  visibility: visible;
+}
+
+#conteudo {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 1rem;
+}
+
+.animal {
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: #fff;
+  transition: border-color 250ms ease-out;
+}
+
+.animal:not(.satisfeito):not(.com-raiva):not(.atacando):hover {
+  border-color: silver;
+}
+
+/* -----------------------------------------
+ * Rodapé
+ */
+
+#info {
+  padding: 15px;
+  background-image: url(imgs/binding-dark.png), linear-gradient(to right, #1ca01c, #2ce12c);
+  border-top: 1px solid #2e9308;
+  color: #fff;
+}
