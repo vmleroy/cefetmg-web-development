@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h1>Gerenciador de Tesouros </h1>
+  <form id="logout" method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button id="logout" type="submit">logout</button>
+  </form>
+  <p>Olá, {{ user.username }}!</p>
+  <section id="tesouros">
+    <table>
+      <caption>Estes são os tesouros acumulados do Barba-Ruiva em suas aventuras</caption>
+      <thead>
+        <tr>
+          <th>Tesouro</th>
+          <th>Nome</th>
+          <th>Valor unitário</th>
+          <th>Quantidade</th>
+          <th>Valor total</th>
+          {% if user.username == 'admin' %}
+            <th>Criado por</th>
+            <th colspan="3"></th>
+          {% else %}
+            <th colspan="3"></th>
+          {% endif %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for tesouro in object_list %}
+          <tr>
+            <td>
+              {% if tesouro.img_tesouro %}
+                <img src="{{ tesouro.img_tesouro.url }}">
+              {% else %}
+                IMG
+              {% endif %}
+            </td>
+            <td>{{ tesouro.nome }}</td>
+            <td>{{ tesouro.preco }}</td>
+            <td>{{ tesouro.quantidade }}</td>
+            <td>{{ tesouro.valor_total }}</td>
+            {% if user.username == 'admin' %}
+              <th>{{ tesouro.created_by }}</th>
+            {% endif %}
+            <td><a href="{% url "editar" tesouro.id %}"><img src="{% static 'imgs/edit.png' %}" alt="Editar"></a></td>
+            <td>
+              <form method='post' action="{% url "excluir" tesouro.id %}">
+                {% csrf_token %}
+                <button type='submit'>
+                  <img src="{% static 'imgs/delete.svg' %}" alt="Deletar">
+                </button>
+              </form>
+            </td>
+            <td>
+              <button class="deleteTesouroAjax" data-tesouro-pk="{{tesouro.id}}">
+                <img src="{% static 'imgs/deleteAjax.svg' %}" alt="DeletarAjax">
+              </button>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">Total geral</td>
+          <td id="total-geral"> {{ total_geral }}</td>
+          <td colspan="3"></td>
+          {% if user.username == 'admin' %}
+            <td colspan="1"></td>
+          {% endif %}
+        </tr>
+      </tfoot>
+    </table>
+    <a id="inserir" href="{% url "inserir" %}" class="add">+</a>
+  </section>
+  <p>Yarr Harr, marujo! Aqui é o temido Barba-Ruiva e você deve me ajudar
+      a contabilizar os espólios das minhas aventuras!</p>
+{% endblock %}

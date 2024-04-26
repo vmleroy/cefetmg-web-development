@@ -10,7 +10,12 @@ from .models import *
 
 class ListaTesourosView(View):
     def tesouros(self):
-        return Tesouro.objects.annotate(valor_total=models.F('preco') * models.F('quantidade'))
+        return Tesouro.objects.annotate(
+            valor_total=models.ExpressionWrapper(
+                models.F('preco') * models.F('quantidade'),
+                output_field=models.DecimalField(max_digits=10, decimal_places=2, blank=True)
+            )
+        )
                               
     def get(self, request):
         tesouros = self.tesouros()
@@ -18,7 +23,6 @@ class ListaTesourosView(View):
           'lista_tesouros': tesouros,
           'total_geral': sum([item.valor_total for item in tesouros]) if len(tesouros) > 0 else 0
         }
-        print(itens)
         return render(request, 'lista_tesouros.html', itens)
       
 class SalvarTesouroView(View):

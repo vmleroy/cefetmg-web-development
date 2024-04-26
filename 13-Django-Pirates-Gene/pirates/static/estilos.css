@@ -6,7 +6,7 @@ tbody a img{
   cursor: pointer;
 }
 
-form{
+form:not(#logout) {
   background-color: rgba(255, 255, 255, 0.5);
   width: 70%;
   margin-top: 5px;
