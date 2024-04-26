@@ -1,0 +1,156 @@
+#menu-principal ul {
+  margin: 0;
+  padding: 0.25em 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+#menu-principal li {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em;
+  transition: all 200ms ease;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+#menu-principal li:hover {
+  background-color: #eeec;
+}
+
+#menu-principal li::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: translatex(100%);
+  transition: inherit;
+}
+
+#menu-principal li.menu-ativo~li::before {
+  transform: translatex(-100%);
+}
+
+#menu-principal li.menu-ativo::before {
+  transform: translateX(0);
+}
+
+#hamburguer-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #hamburguer-button {
+    display: block;
+    margin: 0 0.5em 0 0;
+    cursor: pointer;
+  }
+
+  #hamburguer-button:hover {
+    background-color: #eeec;
+  }
+
+  #hamburguer-button span {
+    position: relative;  
+  }
+  
+  #hamburguer-button:active span {
+    left: 1px;
+    top: 1px;
+  }
+
+
+
+  #menu-principal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -250px;
+    bottom: 0;
+    width: 240px;
+    background-color: white;
+    border: 1px solid silver;
+    box-shadow: 2px 2px 3px silver;
+    transition: all 200ms ease-out;
+  }
+
+  #menu-principal ul {
+    flex-direction: column;
+  }
+
+  #menu-principal li {
+    width: 100%;
+    border-bottom: 1px solid silver;
+  }
+
+  #menu-principal li::before {
+    display: none;
+  }
+
+  #menu-principal li.menu-ativo~li::before {
+    display: none;
+  }
+
+  #menu-principal li.menu-ativo::before {
+    display: none;
+  }
+
+  #menu-principal.menu-aberto {
+    display: block;
+  }
+
+  
+
+  .hamburguer {
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    border-radius: 3px;
+    border: 1px solid silver;
+    text-align: center;
+    line-height: 2em;
+    box-sizing: border-box;
+  }
+
+  .hamburger:hover {
+    border-color: gray;
+  }
+
+
+
+  header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+
+  body.menu-aberto > #menu-principal {
+    left: 0;
+  }
+
+  body.menu-aberto > #container {
+    left: 250px;
+  }
+
+  body.menu-aberto {
+    overflow-x: hidden;
+  }
+
+
+
+  #container {
+    position: relative;
+    left: 0;
+    transition: left 200ms ease-out;
+    padding: 0.5em;
+  }
+}
