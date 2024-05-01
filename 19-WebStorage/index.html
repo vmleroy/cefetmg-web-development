@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Procrastinator</title>
+    <link rel="stylesheet" href="tarefas.css">
+    <link rel="shortcut icon" href="imgs/icone.png">
+  </head>
+  <body>
+    <header>
+      <h1 id="marca">Tarefas a <br>Procrastinar
+        <button id="minimizar">x</button>
+      </h1>
+    </header>
+
+    <main id="app">
+      <div id="info-usuario">
+        <label for="nome-usuario">Dono da lista:</label>
+        <input type="text" id="nome-usuario" placeholder="Digite seu nome...">
+        <button id="carregar">Carregar</button>
+        <button id="salvar">Salvar</button>
+      </div>
+      <div id="nova-tarefa">
+        <input type="text" id="nova-tarefa-nome" autofocus placeholder="Digite o que você deseja procrastinar...">
+        <!-- DESAFIO 3 -->
+        
+        <select id="nova-tarefa-categoria">
+          <option value="lazer">Lazer</option>
+          <option value="compras">Compras</option>
+          <option value="estudos">Estudos</option>
+        </select>
+       
+        <button id="incluir-nova-tarefa">+</button>
+      </div>
+      <ul id="lista-tarefas">
+        <!-- Exemplo de item da lista -->
+        <li class="item-tarefa marcado">Exemplo de item da lista</li>
+      </ul>
+    </main>
+
+    <script src="tarefas.js" charset="utf-8"></script>
+  </body>
+</html>

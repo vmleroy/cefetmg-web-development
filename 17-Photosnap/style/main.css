@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: Raleway, sans-serif;
+}
+
+header {
+  display: flex;
+  padding: 0.25em 0.5em;
+  background-color: lavender;
+  box-shadow: 0 2px 8px silver;
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+
+header img {
+  height: 40px;
+  align-self: center;
+}
+
+header h1 {
+  margin: 0 0.35em;
+  font-family: "Cedarville Cursive", cursive;
+}
+
+main {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controles {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1em;
+  border: 1px solid silver;
+  padding: 1em;
+  margin-bottom: 4px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.controles input[type="number"] {
+  width: 5em;
+  margin-left: 1em;
+}
+
+.controles label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25em;
+}
+
+.controles button:last-of-type {
+  margin-bottom: 2em;
+}
+
+.controles button+label {
+  flex-direction: column;
+}
+
+.controles select {
+  margin-left: 1em;
+}
+
+/*
+  coloca posição relativa para a div que contém a foto anotada
+  de forma que as anotações dentro dela fiquem posicionadas
+  em um sistema de coordenadas dentro dela
+*/
+.foto-anotada {
+  position: relative;
+}
+
+/*
+  cada região anotada e cada anotação (balãozinho) estão posicionadas de
+  forma absoluta dentro da .foto-anotada
+*/
+.marcacao,
+#balaozinho {
+  position: absolute;
+}
+
+/*
+  estiliza cada região anotada com uma borda preta/branca (usei a propriedade
+  outline também, que é similar à borda, para conseguir fazer 2 cores) e
+  com um fundo semitransparente
+*/
+.marcacao {
+  border: 1px solid black;
+  outline: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*
+  estiliza a imagem da .foto-anotada com uma bordinha e uma sombra marota
+*/
+.foto-anotada img {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, .2);
+  border: 1px solid #666;
+  max-width: 75vw;
+  min-width: 60vw;
+}
+
+.marcacao.selecionada {
+  border-color: darkgoldenrod;
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+/* 
+  estilizacao dos exercicios
+*/
+#balaozinho {
+  pointer-events: none;
+}
+
+#balaozinho.balaozinho-active {
+  font-size: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 4px 4px 4px silver;
+  border: 1px;
+  border-radius: 10px;
+}
+
+.marcacao {
+  cursor: help;
+  transition: all 200ms ease;
+}
+
+.marcacao.selected {
+  border-color: darkgoldenrod;
+  background-color: rgba(255, 255, 0, 0.2);
+}
